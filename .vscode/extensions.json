@@ -1,0 +1,8 @@
+{
+  "recommendations": [
+    "bluebrown.yamlfmt",
+    "esbenp.prettier-vscode",
+    "golang.go",
+    "GitHub.vscode-github-actions"
+  ]
+}
