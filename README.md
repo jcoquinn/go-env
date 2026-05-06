@@ -14,16 +14,22 @@ go get github.com/jcoquinn/go-env/env
 ## Usage
 
 ```go
+package main
+
 import (
 	"time"
 
 	"github.com/jcoquinn/go-env/env"
 )
 
-port    := env.MustInt("PORT", 8000)           // int with default
-debug   := env.MustBool("DEBUG", false)         // bool with default
-timeout := env.MustDuration("TIMEOUT", 30*time.Second) // duration with default
-dsn     := env.MustString("DATABASE_URL")       // required string, panics if unset
+func main() {
+	port := env.MustInt("PORT", 8000)                        // int with default
+	debug := env.MustBool("DEBUG", false)                    // bool with default
+	timeout := env.MustDuration("TIMEOUT", 30*time.Second)   // duration with default
+	dsn := env.MustString("DATABASE_URL")                    // required string, panics if unset
+
+	_, _, _, _ = port, debug, timeout, dsn
+}
 ```
 
 **Wrap calls in a `FromEnv` constructor that converts panics to errors:**
